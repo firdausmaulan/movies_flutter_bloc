@@ -39,7 +39,8 @@ class MoviesBloc extends Bloc<MoviesEvent, MoviesState> {
         movies.addAll(mapper.toMovieList(moviesResponse, genres));
         emit(MoviesLoaded(movies));
       } catch(e) {
-        emit(MoviesError(e.toString()));
+        // emit(MoviesError(e.toString()));
+        debugPrint(e.toString());
       }
     });
   }

@@ -68,7 +68,7 @@ class MovieListPage extends StatelessWidget {
                         ),
                       );
                     } else if (state is MoviesError) {
-                      return SnackBar(content: Text(state.error));
+                      return Text(state.error);
                     }
                     return const Text("Unknown MoviesState");
                   },

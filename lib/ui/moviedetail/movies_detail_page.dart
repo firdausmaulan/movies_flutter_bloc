@@ -40,8 +40,7 @@ class MovieDetailPage extends StatelessWidget {
                     CachedNetworkImage(
                       height: 240,
                       fit: BoxFit.cover,
-                      imageUrl:
-                          "${Constant.imageUrl}${state.movie.backdropPath}",
+                      imageUrl: state.movie.backdropUrl.toString(),
                       placeholder: (context, url) => const Center(
                           child: SizedBox(
                         height: 40,
@@ -71,7 +70,7 @@ class MovieDetailPage extends StatelessWidget {
                   ],
                 );
               } else if (state is MovieError) {
-                return SnackBar(content: Text(state.error));
+                return Text(state.error);
               }
               return const Text("Unknown MoviesState");
             },

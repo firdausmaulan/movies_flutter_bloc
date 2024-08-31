@@ -17,7 +17,7 @@ class MovieCard extends StatelessWidget {
             width: 80,
             height: 120,
             fit: BoxFit.cover,
-            imageUrl: "${Constant.imageUrl}${movieItem.posterPath}",
+            imageUrl: movieItem.posterUrl.toString(),
             placeholder: (context, url) => const Center(
                 child: SizedBox(
               height: 40,
@@ -40,7 +40,7 @@ class MovieCard extends StatelessWidget {
                       style: const TextStyle(
                           fontSize: 14, fontWeight: FontWeight.bold),
                     ),
-                    Text("Rating : ${movieItem.voteAverage?.toStringAsFixed(1)} / 10",
+                    Text("Rating : ${movieItem.formattedVoteAverage}",
                         style: const TextStyle(fontSize: 13)),
                     Text("Release Date : ${movieItem.releaseDate.toString()}",
                         style: const TextStyle(fontSize: 13)),
